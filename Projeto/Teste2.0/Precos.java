@@ -1,33 +1,19 @@
 package ProjetoJava;
 
 import java.text.NumberFormat;
+
 import java.util.Scanner;
 
 public class Precos extends Bebidas implements Adegaadm{
-
-	private double preco;
-	
-	public Precos() {
-		
-		this.preco = preco;
-	}
-
-	public double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(double preco) {
-		this.preco = preco;
-	}
 	
 	public void bebidasPreco() {
-		
+			
 		Scanner ler = new Scanner(System.in);
 		Bebidas bebidas = new Bebidas();
 		
 		double somaTotal=0,Vinho=16.00,Breja=9.00, Azul=13.00, Ref=14.00, SucoCLeite=8.00, Agua=6.00;
 		
-		int num, bn, ba, fc;
+		int num, bn, ba, fc, cc;
 		
 		do {
 			
@@ -93,26 +79,34 @@ public class Precos extends Bebidas implements Adegaadm{
 		
 		do {	
 			
-			System.out.println("\nVocê deseja finalizar está compra?");
-			System.out.println("\n1 - Sim");
-			System.out.println("\n2 - Não");
+			System.out.println("\nEscolha a forma de pagamento");
+			System.out.println("\n1 - Dinheiro");
+			System.out.println("\n2 - Cartão");
 			System.out.println("\n3 - Sair do carrinho");
 			fc = ler.nextInt();
 				
 		switch(fc) {
 		case 1: 
 			if(fc == 1) {
-				System.out.println("\nCompra finalizada com sucesso!");
+				System.out.println("\nO boleto foi enviado para o e-mail cadastrado no valor de: "+somaTotal);
 			}
 			break;
 		case 2: 
 			if(fc == 2) {
-				System.out.println("\nCompra não finalizada!");
+				
+				System.out.println("\nSelecione a bandeira do seu cartão!");
+				System.out.println("\n1 - Visa");
+				System.out.println("\n2 - Master");
+				System.out.println("\n3 - Diners Club");
+				cc = ler.nextInt(); 
+				
+				System.out.println("\nCompra aprovada!");	
+
 			}
 			default:
 				System.out.println("\nObrigado por comprar na: "+Adegaadm.nome);
 				System.out.println("\nCaso queira visitar um de nossos locais: "+Adegaadm.endereco);
 		   }
-		}while(fc != 3 && fc != 2 && fc != 1);
+		}while(fc == 3 && fc != 2 && fc != 1);
 	}
 }
