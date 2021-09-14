@@ -1,6 +1,7 @@
 package ProjetoJava;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class ExecucaoDoTeste {
 
@@ -10,16 +11,44 @@ public class ExecucaoDoTeste {
 		Precos precos = new Precos();
 		Bebidas bebidas = new Bebidas();
 		Funcionario funcionario = new Funcionario();
+		boolean continueLoop = true;
 
-		//Primeira exercução visão do funcionario!!!
-		funcionario.Estoque();
+		//Primeira exercuÃ§Ã£o visÃ£o do funcionario!!!
+		do 
+			{
+				try
+				{
+					funcionario.Estoque();
+					continueLoop = false;
+				}
+				catch(InputMismatchException InputMismatchException)
+				{
+					System.err.printf("\nException: %s\n",InputMismatchException);
+					System.out.println("\nVocÃª deve entrar com um valor do tipo inteiro!\nPor favor, tente novamente.");
+				}
+			}
+			while(continueLoop);
 		
 		for(int i=0; i<15; i++) {
 			System.out.println("\n");
 		}
-		
-		//Segunda exercução visão do cliente!!!
-		precos.bebidasPreco();
+				//Segunda exercuÃ§Ã£o visÃ£o do cliente!!!
+		do 
+			{
+				try
+				{
+					precos.bebidasPreco();
+					continueLoop = false;
+				}
+				catch(InputMismatchException InputMismatchException)
+				{
+					System.err.printf("\nException: %s\n",InputMismatchException);
+					System.out.println("\nVocÃª deve entrar com um valor do tipo inteiro!\nPor favor, tente novamente.");
+					precos.bebidasPreco();
+				}
+			}
+			while(continueLoop);
+
 	}
 
 }
