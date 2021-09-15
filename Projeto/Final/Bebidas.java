@@ -53,6 +53,7 @@ public class Bebidas{
 		System.out.println("\n3 - Água, R$ 6.00");
 	}
 	
+	//Métodos para SC
 	public void bebidasInfo() {
 		
 		System.out.println("\n1 - Alcoolicas");
@@ -61,6 +62,7 @@ public class Bebidas{
 		
 	}
 	
+	//Método Formatar Moeda
 	public String formatarMoeda() {
 		
 		NumberFormat nf = NumberFormat.getCurrencyInstance();
